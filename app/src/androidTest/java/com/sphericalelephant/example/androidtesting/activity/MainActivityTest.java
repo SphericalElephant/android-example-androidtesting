@@ -28,7 +28,7 @@ import static org.hamcrest.Matchers.not;
 
 /**
  * Extending {@link ActivityInstrumentationTestCase2} simplifies matters.
- * Way up the hierarchi, ActivityInstrumentationTestCase2 extends TestCase!
+ * Way up the hierarchy, ActivityInstrumentationTestCase2 extends TestCase!
  */
 // the actual test runner, not the instrumentation test runner.
 @RunWith(AndroidJUnit4.class)
