@@ -56,4 +56,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/activity_mainactivitiy_network"/>
+
+    <Button
+        android:id="@+id/activity_mainactivity_b_tracing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mainactivity_manual_tracing"/>
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.sphericalelephant.example.androidtesting.activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -76,5 +77,25 @@ public class MainActivity extends AppCompatActivity {
             ));
         });
 
+        findViewById(R.id.activity_mainactivity_b_tracing).setOnClickListener(v -> {
+            v.setEnabled(false);
+            Debug.startMethodTracing("sample_trace");
+            a();
+            Debug.stopMethodTracing();
+            v.setEnabled(true);
+        });
+    }
+
+    private void a() {
+        b();
+    }
+    private void b() {
+        c();
+    }
+    private void c() {
+        d();
+    }
+    private void d() {
+        Toast.makeText(this, R.string.activity_mainactivity_programmatical_tracing_complete, Toast.LENGTH_SHORT).show();
     }
 }
