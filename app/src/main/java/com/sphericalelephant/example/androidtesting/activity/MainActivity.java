@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.activity_mainactivity_b_memory).setOnClickListener(v -> {
             v.setEnabled(false);
-            List<Object> l = new ArrayList<?>(10000);
+            List<Object> l = new ArrayList<>(10000);
             for (int i = 0; i < 100000; i++) {
                 l.add(new Object());
             }
