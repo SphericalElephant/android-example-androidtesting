@@ -53,11 +53,14 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.activity_mainactivity_b_memory).setOnClickListener(v -> {
             v.setEnabled(false);
-            List<Object> l = new ArrayList<>(10000);
-            for (int i = 0; i < 100000; i++) {
-                l.add(new Object());
-            }
-            v.setEnabled(true);
+            Runnable r = () -> {
+                List<Object> l = new ArrayList<>(10000);
+                for (int i = 0; i < 100000; i++) {
+                    l.add(new Object());
+                }
+                v.setEnabled(true);
+            };
+            new Thread(r).start();
         });
         findViewById(R.id.activity_mainactivity_b_network).setOnClickListener(v -> {
             v.setEnabled(false);
