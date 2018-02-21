@@ -39,4 +39,21 @@
         android:enabled="false"
         android:text="@string/activity_mainactivity_sametext" />
 
+    <Button
+        android:id="@+id/activity_mainactivity_b_cpuload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mainactivity_cpu_load"/>
+
+    <Button
+        android:id="@+id/activity_mainactivity_b_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mainactivity_memory"/>
+
+    <Button
+        android:id="@+id/activity_mainactivity_b_network"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mainactivitiy_network"/>
 </LinearLayout>

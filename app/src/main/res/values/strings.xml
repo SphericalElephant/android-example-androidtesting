@@ -3,4 +3,7 @@
     <string name="activity_mainactivity_thisisatest">This is a test</string>
     <string name="activity_mainactivity_textviewclicked">This TextView has been clicked</string>
     <string name="activity_mainactivity_sametext">Same Text!</string>
+    <string name="activity_mainactivity_cpu_load">CPU Load</string>
+    <string name="activity_mainactivity_memory">Memory</string>
+    <string name="activity_mainactivitiy_network">Network</string>
 </resources>
