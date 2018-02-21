@@ -28,11 +28,20 @@ public class MainActivity extends AppCompatActivity {
 
     protected static final String SHARED_PREFERENCES_KEY = "com.sphericalelephant.example.androidtesting.activity.MainActivity.SHARED_PREFERENCES_KEY";
 
-    public static class MemoryDummy {
+    private MemoryDummyInstance instance = new MemoryDummyInstance(Integer.MAX_VALUE, UUID.randomUUID().toString());
+
+    public static final class MemoryDummyInstance extends MemoryDummy{
+
+        public MemoryDummyInstance(int id, String info) {
+            super(id, info);
+        }
+    }
+
+    private static class MemoryDummy {
         private int id;
         private String info;
 
-        public MemoryDummy(int id, String info) {
+        private MemoryDummy(int id, String info) {
             this.id = id;
             this.info = info;
         }
