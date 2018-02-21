@@ -17,6 +17,8 @@ import com.sphericalelephant.example.androidtesting.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by siyb on 24/11/15.
@@ -25,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
     protected static final String SHAREDPREFERENCES = "SHAREDPREFS";
 
     protected static final String SHARED_PREFERENCES_KEY = "com.sphericalelephant.example.androidtesting.activity.MainActivity.SHARED_PREFERENCES_KEY";
+
+    public static class MemoryDummy {
+        private int id;
+        private String info;
+
+        public MemoryDummy(int id, String info) {
+            this.id = id;
+            this.info = info;
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.activity_mainactivity_b_memory).setOnClickListener(v -> {
             v.setEnabled(false);
             Runnable r = () -> {
-                List<Object> l = new ArrayList<>(10000);
-                for (int i = 0; i < 100000; i++) {
-                    l.add(new Object());
+                List<MemoryDummy> l = new ArrayList<>(10000);
+                for (int i = 0; i < 10000; i++) {
+                    l.add(new MemoryDummy(i, UUID.randomUUID().toString()));
                 }
-                v.setEnabled(true);
+                runOnUiThread(() -> v.setEnabled(true));
             };
             new Thread(r).start();
         });
